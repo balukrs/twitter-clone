@@ -1,0 +1,67 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": { "extensions": [".js", ".mjs"] }
+    }
+  },
+  "ignorePatterns": [".eslintrc.json"],
+  "extends": [
+    "airbnb-base",
+    "prettier",
+    "plugin:node/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.test.mjs"],
+      "rules": {
+        "no-console": "off",
+        "no-unused-vars": "off"
+        // "jest/expect-expect": "off"
+      }
+    }
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off",
+    "no-plusplus": "off",
+    "no-process-exit": "off",
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": ["off", { "target": "single" }],
+    "import/extensions": [0, { "<js>": "always" }],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": ["__dirname", "__filename"]
+      }
+    ],
+    "no-param-reassign": 0,
+    "import/no-extraneous-dependencies": 0,
+    "node/no-unpublished-import": [
+      "error",
+      {
+        "allowModules": []
+      }
+    ]
+  }
+}
